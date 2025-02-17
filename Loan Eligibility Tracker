@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    float salary;
+    int creditScore;
+    int exp;
+    
+    printf("Enter the Salary:\n");
+    scanf("%f",&salary);
+    
+    printf("Enter the credit score:\n");
+    scanf("%d",&creditScore);
+    
+     printf("Enter the experience (in years):\n");
+    scanf("%d",&exp);
+    
+    if(salary>=30000 && creditScore>=750 && exp>=2){
+        printf("Congratulations!! Loan is Sanctioned\n");
+    }
+    else{
+        printf("Sorry you are not eligible for the loan\n");
+    }
+    
+    if(salary<30000){
+        printf("Your salary is lesser than 30000.You are not Eligible for this loan\n");
+    }
+    if(creditScore<750){
+        printf("Your Credit Score is lesser than 750.You are not Eligible for this loan\n");
+    }
+    if(exp<2){
+        printf("You have less experience in your work.You are not Eligible for this loan\n");
+    }
+}
