@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char vehicleType[20];
+    float distance, tax=0.0;
+     
+    printf("Enter vehicle type(Car/Bus/Truck):\n");
+    scanf("%s",vehicleType);
+    
+    printf("Enter the distance Travelled by the vehicle(in KM):\n");
+    scanf("%f",&distance);
+
+if (strcmp(vehicleType, "Car") == 0) {
+        tax = 5 * distance;
+    }
+    else if (strcmp(vehicleType, "Truck") == 0) {
+        tax = 10 * distance;
+        printf("Tax Before Discount is:%f\n",tax);
+        
+        // Apply discount if distance is more than 500 km
+        if (distance > 500) {
+            tax *= 0.9;
+            printf("Tax After Discount is:%f\n",tax);
+        }
+        
+    } else if (strcmp(vehicleType, "Bus") == 0) {
+        tax = 8 * distance;
+        printf("Tax Before Discount is:%f\n",tax);
+        
+        // Apply discount if distance is more than 300 km
+        if (distance > 300) {
+            tax *= 0.95;
+            printf("Tax After Discount is:%f\n",tax);
+            
+        }
+    } else {
+        printf("Invalid vehicle type!\n");
+        return 1;
+    }
+    printf("Total Toll Tax: ₹%.2f\n",tax);
+    return 0;
+}
