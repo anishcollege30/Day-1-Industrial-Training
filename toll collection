@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+#define car_rate 50
+#define bike_rate 20
+#define truck_rate 100
+
+int main(){
+    int N,i;
+    int total_collection=0;
+    char type;
+   
+    printf("Enter the no of vehicles passed:\n");
+    scanf("%d",&N);
+   
+    for(int i=0;i<N;i++){
+    printf("Enter if the vehicle is car/bike/truck(c/b/t):\n");
+    scanf(" %c",&type);
+   
+    switch (type){
+        case 'C':
+        case 'c':
+        total_collection+=car_rate;
+        break;
+       
+        case 'b':
+        case 'B':
+        total_collection+=bike_rate;
+        break;
+       
+        case 'T':
+        case 't':
+        total_collection+=truck_rate;
+        break;
+       
+        default:
+               printf("Invalid Vehicle type.Please Enter car/bike/truck.\n");
+               i--;
+               break;
+    }
+}
+    printf("Total revenue collected: ₹%d\n", total_collection);
+    return 0;
+}
